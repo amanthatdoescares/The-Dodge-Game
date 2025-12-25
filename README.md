@@ -2,7 +2,7 @@
 
 A fast-paced browser-based dodge game built from scratch using vanilla JavaScript, HTML5 Canvas, and modern ES6 modules. Navigate your character to avoid falling blocks and survive as long as possible to achieve high scores.
 
-![Game Preview](public/canvas.png)
+![Game Preview]![alt text](image.png)
 
 ## 🎮 Game Features
 
