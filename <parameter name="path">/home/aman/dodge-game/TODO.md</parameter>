@@ -1,0 +1,55 @@
+<parameter name="content"># Dodge Game - Fix Plan
+
+## Issues Identified:
+
+### 1. HTML Path Issues (CRITICAL)
+- CSS and JS imports use incorrect relative paths
+- Current: `../styles/style.css` and `../src/main.js` 
+- Should be: `./styles/style.css` and `./src/main.js`
+
+### 2. HTML Structure Issues
+- Duplicate "Back" button in menu and coming-soon sections
+- Menu shows all buttons (including back button) which doesn't make sense for home screen
+
+### 3. Missing/Empty Files
+- `src/core/constants.js` exists but is empty (constants are hardcoded in main.js)
+- `src/core/state.js` exists but is empty
+- `src/net/socket.js` exists but is empty (networking not implemented)
+- `src/systems/spawner.js` exists but is empty (spawning logic is in game.js)
+
+### 4. Game Logic Issues
+- Block respawn logic causes blocks to teleport instead of being properly removed
+- Canvas styling could be improved
+
+## Plan:
+
+### Phase 1: Fix Critical HTML Issues
+1. Fix relative paths in public/index.html
+2. Remove duplicate back button from menu
+3. Improve menu structure
+
+### Phase 2: Clean Up Codebase  
+1. Remove unused/empty files
+2. Consolidate constants into proper module
+3. Improve code organization
+
+### Phase 3: Game Logic Improvements
+1. Fix block cleanup logic
+2. Improve game over handling
+3. Add better visual feedback
+
+### Phase 4: Testing
+1. Test all game functionality
+2. Verify navigation works
+3. Ensure game resets properly
+
+## Files to Edit:
+- `/home/aman/dodge-game/public/index.html` (CRITICAL - Path fixes)
+- `/home/aman/dodge-game/src/main.js` (Constants consolidation)
+- `/home/aman/dodge-game/src/core/game.js` (Block cleanup fix)
+
+## Files to Remove:
+- `/home/aman/dodge-game/src/core/constants.js` (Empty)
+- `/home/aman/dodge-game/src/core/state.js` (Empty) 
+- `/home/aman/dodge-game/src/net/socket.js` (Empty)
+- `/home/aman/dodge-game/src/systems/spawner.js` (Empty)</parameter>

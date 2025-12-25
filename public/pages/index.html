@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dodge Game</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple dodge game built from scratch."
+    />
+
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+
+  <body>
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source src="background video/homepage_bg.mp4" type="video/mp4" />
+    </video>
+    <div id="home-layout">
+      <img src="The Dodge Game.svg" alt="Dodge Game" id="game-title" />
+      <div id="menu">
+        <!-- Menu background SVG -->
+        <button class="menu-btn" id="startBtn" type="button">
+          <img src="Play.svg" alt="Start Game" />
+        </button>
+
+        <button class="menu-btn" id="leaderboardBtn" type="button">
+          <img src="Leader Board.svg" alt="Leaderboard" />
+        </button>
+
+        <button class="menu-btn" id="aboutBtn" type="button">
+          <img src="About Us.svg" alt="About" />
+        </button>
+      </div>
+    </div>
+
+    <script type="module" src="../src/main.js"></script>
+  </body>
+</html>

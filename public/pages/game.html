@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dodge Game Shrine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+
+  <body>
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source src="background video/game_bg.mp4" type="video/mp4" />
+    </video>
+    <!-- Back button -->
+    <button class="menu-btn" id="backBtn" type="button">
+      <img src="Back.svg" alt="Back" />
+    </button>
+
+    <!-- Game canvas -->
+    <canvas id="game"></canvas>
+    <div id="game-over" hidden>
+      <div class="game-over-content">
+        <h1>Game Over</h1>
+        <div class="score-display">
+          <p>Final Score: <span id="final-score">0</span></p>
+        </div>
+        <div class="restart-instructions">
+          <p>Press <kbd>R</kbd> to Restart</p>
+          <p class="hint">or click anywhere to restart</p>
+        </div>
+      </div>
+    </div>
+    <!-- Game entry point -->
+    <script type="module" src="../src/gameEntry.js"></script>
+
+    <!-- Back navigation with click sound -->
+    <script>
+      const clickSound = new Audio("/public/sfx/click.mp3");
+      clickSound.volume = 0.4;
+      
+      document.getElementById("backBtn").onclick = () => {
+        // Play click sound
+        clickSound.currentTime = 0;
+        clickSound.play();
+        
+        // Navigate back
+        window.location.href = "index.html";
+      };
+    </script>
+
+    <!-- Global click sound for any button -->
+    <script>
+      const globalClickSound = new Audio("/public/sfx/click.mp3");
+      globalClickSound.volume = 0.4;
+      
+      document.addEventListener("click", (e) => {
+        const button = e.target.closest("button");
+        if (!button || button.disabled) return;
+        
+        // Play click sound
+        globalClickSound.currentTime = 0;
+        globalClickSound.play();
+      });
+    </script>
+
+</html>
