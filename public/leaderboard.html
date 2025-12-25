@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leaderboard - Dodge Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source src="background video/homepage_bg.mp4" type="video/mp4" />
+    </video>
+    
+    <div id="leaderboard-layout">
+      <button class="back-btn" onclick="history.back()">
+        <img src="Back.svg" alt="Back" />
+      </button>
+      
+      <img src="Leader Board.svg" alt="Leaderboard" id="leaderboard-title" />
+      
+      <div id="coming-soon-box">
+        <h2>Coming Soon!</h2>
+        <p>Leaderboard feature is under development</p>
+      </div>
+    </div>
+
+    <!-- Load page and add audio -->
+    <script>
+      // Mark page as loaded for CSS transitions
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+      });
+
+      // Click sound for back button
+      const clickSound = new Audio("/public/sfx/click.mp3");
+      clickSound.volume = 0.4;
+      
+      document.addEventListener("click", (e) => {
+        const button = e.target.closest("button");
+        if (!button || button.disabled) return;
+        
+        clickSound.currentTime = 0;
+        clickSound.play();
+      });
+    </script>
+  </body>
+</html>

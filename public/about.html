@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About Us - Dodge Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+  </head>
+  <body>
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source src="background video/homepage_bg.mp4" type="video/mp4" />
+    </video>
+    
+    <div id="about-layout">
+      <button class="back-btn" onclick="history.back()">
+        <img src="Back.svg" alt="Back" />
+      </button>
+      
+      <img src="About Us.svg" alt="About Us" id="about-title" />
+      
+      <div id="about-content">
+        <h2>About The Dodge Game</h2>
+        <p>
+          The Dodge Game is a fast-paced browser-based arcade game where players 
+          control a character to avoid falling blocks for as long as possible.
+        </p>
+        <p>
+          Built with modern web technologies including vanilla JavaScript, 
+          HTML5 Canvas, and responsive design principles.
+        </p>
+        <p>
+          Challenge yourself to achieve the highest score and see how long 
+          you can survive in this exciting dodging adventure!
+        </p>
+      </div>
+    </div>
+
+    <!-- Load page and add audio -->
+    <script>
+      // Mark page as loaded for CSS transitions
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+      });
+
+      // Click sound for back button
+      const clickSound = new Audio("/public/sfx/click.mp3");
+      clickSound.volume = 0.4;
+      
+      document.addEventListener("click", (e) => {
+        const button = e.target.closest("button");
+        if (!button || button.disabled) return;
+        
+        clickSound.currentTime = 0;
+        clickSound.play();
+      });
+    </script>
+  </body>
+</html>

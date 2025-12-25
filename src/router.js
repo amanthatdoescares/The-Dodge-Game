@@ -13,16 +13,16 @@ export function goToMenu() {
 }
 
 /**
- * Show coming soon alert
+ * Navigate to leaderboard page
  */
 export function goToLeaderboard() {
-  alert("Leaderboard coming soon");
+  window.location.href = "leaderboard.html";
 }
 
 /**
- * Show coming soon alert
+ * Navigate to about page
  */
 export function goToAbout() {
-  alert("About coming soon");
+  window.location.href = "about.html";
 }
 
