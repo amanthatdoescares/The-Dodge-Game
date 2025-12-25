@@ -4,13 +4,21 @@ export function render(ctx, canvas, player, blocks, score, gameOver) {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // player
-  ctx.fillStyle = "white";
-  ctx.fillRect(player.x, player.y, player.size, player.size);
+  if (player.image && player.image.complete) {
+    ctx.drawImage(player.image, player.x, player.y, player.size, player.size);
+  } else {
+    ctx.fillStyle = "white";
+    ctx.fillRect(player.x, player.y, player.size, player.size);
+  }
 
   // blocks
-  ctx.fillStyle = "red";
   for (const b of blocks) {
-    ctx.fillRect(b.x, b.y, b.size, b.size);
+    if (b.image && b.image.complete) {
+      ctx.drawImage(b.image, b.x, b.y, b.size, b.size);
+    } else {
+      ctx.fillStyle = "red";
+      ctx.fillRect(b.x, b.y, b.size, b.size);
+    }
   }
 
   // score

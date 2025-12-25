@@ -1,0 +1,10 @@
+{
+  "name": "dodge-game",
+  "version": "1.0.0",
+  "description": "A dodge game with large images",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {}
+}

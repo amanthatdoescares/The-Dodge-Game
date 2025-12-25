@@ -1,9 +1,14 @@
+// Load player image
+const playerImage = new Image();
+playerImage.src = "../assets/player.png";
+
 export function createPlayer(constants) {
   return {
     x: constants.CANVAS_WIDTH / 2 - constants.PLAYER_SIZE / 2,
     y: constants.CANVAS_HEIGHT - 50,
     size: constants.PLAYER_SIZE,
     speed: constants.PLAYER_SPEED,
+    image: playerImage,
   };
 }
 
